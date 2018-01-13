@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
+from django.contrib.auth import login as auth_login
+from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate
-from django.contrib.auth import login as auth_login, logout as auth_logout
-from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .models import Product, BasketedProduct
+from django.shortcuts import redirect, render
+
+from .models import BasketedProduct, Product
 
 # Create your views here.
 

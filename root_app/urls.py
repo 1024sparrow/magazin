@@ -1,7 +1,7 @@
-from django.conf.urls import include, url
 from django.conf import settings
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib.staticfiles.urls import static
+from django.conf.urls import include, url
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+
 from . import views
 
 urlpatterns = [
