@@ -1,0 +1,5 @@
+db.sqlite3
+py2dj1_11_1
+migrations
+*.pyc
+*.swp
