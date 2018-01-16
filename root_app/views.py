@@ -2,7 +2,8 @@
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect, render
 
 from .models import BasketedProduct, Product
@@ -72,6 +73,10 @@ def to_basket(request, product_id):
         return render(request, 'root_app/need_to_login.html', context)
     # кладём товар в корзину (товар имеет отношение только
     #   к текущему пользователя (сессии))
+    try:
+        product = Product.objects.get(id=product_id)
+    except ObjectDoesNotExist:
+        raise Http404(u'Вы пытаетесь купить товар, которого нет в каталоге')
     basket_item = BasketedProduct(session=session_key)
     basket_item.save()
     basket_item.product = product_id
@@ -112,6 +117,9 @@ def basket(request):
 
 def card(request, product_id):
     context = _context(request)
-    product = Product.objects.get(id=product_id)
+    try:
+        product = Product.objects.get(id=product_id)
+    except ObjectDoesNotExist:
+        raise Http404(u'Такого товара нет в каталоге')
     context['product'] = product
     return render(request, 'root_app/card.html', context)
