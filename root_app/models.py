@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.db import models
+import json
 
 # Create your models here.
 
@@ -21,3 +22,6 @@ class Product(models.Model):
 class BasketedProduct(models.Model):
     product = models.ManyToManyField(Product)
     session = models.CharField(max_length=128)
+
+    #def __str__(self):
+    #    return 'qwerty123' #json.dumps()
