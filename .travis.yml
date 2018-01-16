@@ -10,12 +10,13 @@ install:
   - pip install -e .
   - pip install pipenv
   - pipenv install --system -d
+  - pipenv install pytest pytest-django pytest-cov
 
 script:
   - python -m pytest
   - mypy --strict-optional hangman
+  - pytest
 
-notifications:
-  email:
-    on_success: never
-    on_failure: change
+after_success:
+  - pip install coveralls
+  - coveralls
