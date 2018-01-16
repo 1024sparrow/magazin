@@ -7,9 +7,8 @@ env:
   - PIPENV_SHELL_COMPAT=true PIPENV_COLORBLIND=true PIPENV_NOSPIN=true
 
 install:
-  - pip install -e .
   - pip install pipenv
-  - pipenv install --system -d
+  - pipenv install --dev
   - pipenv install pytest pytest-django pytest-cov
 
 script:
