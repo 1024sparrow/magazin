@@ -1,7 +1,8 @@
 # magazin
 
 # Скачивание
-```git clone https://github.com/1024sparrow/magazin
+```
+git clone https://github.com/1024sparrow/magazin
 cd magazin
 git checkout travis
 ```
