@@ -5,8 +5,10 @@ from django.contrib.auth import authenticate
 from django.http import HttpResponseRedirect, Http404
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import redirect, render
+from rest_framework import viewsets
 
 from .models import BasketedProduct, Product
+from .serializers import ProductSerializer
 
 # Create your views here.
 
@@ -25,6 +27,10 @@ def _context(request):
         'login_ok': request.user.is_authenticated,
         'basket_count': basket_count,
     }
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
 
 
 def index(request):
