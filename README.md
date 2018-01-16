@@ -1,6 +1,6 @@
 # magazin
 
-[![Build Status](https://travis-ci.org/magazin/django_blog.svg?branch=master)](https://travis-ci.org/1024sparrow/magazin)
+[![Build Status](https://travis-ci.org/1024sparrow/magazin.svg?branch=master)](https://travis-ci.org/1024sparrow/magazin)
 [![Coverage Status](https://coveralls.io/repos/github/1024sparrow/magazin/badge.svg?branch=master)](https://coveralls.io/github/1024sparrow/magazin?branch=master)
 
 # Скачивание
