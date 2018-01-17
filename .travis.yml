@@ -5,14 +5,10 @@ python:
 
 install:
   - pip install -r requirements.txt
-  #- pip install pipenv
-  #- pipenv install --dev
-  #- pipenv install pytest pytest-django pytest-cov
-  #- pipenv install mypy
+  - pipenv install mypy
 
 script:
-  #- python -m pytest
-  #- mypy --strict-optional magazin
+  - mypy --strict-optional magazin
   - pytest
 
 after_success:
