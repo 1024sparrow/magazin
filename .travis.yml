@@ -2,19 +2,21 @@ language: python
 
 python:
   - 3.5
+  - 3.6
 
 env:
   - PIPENV_SHELL_COMPAT=true PIPENV_COLORBLIND=true PIPENV_NOSPIN=true
 
 install:
-  - pip install pipenv
-  - pipenv install --dev
-  - pipenv install pytest pytest-django pytest-cov
-  - pipenv install mypy
+  - pip install -r requirements.txt
+  #- pip install pipenv
+  #- pipenv install --dev
+  #- pipenv install pytest pytest-django pytest-cov
+  #- pipenv install mypy
 
 script:
-  - python -m pytest
-  - mypy --strict-optional magazin
+  #- python -m pytest
+  #- mypy --strict-optional magazin
   - pytest
 
 after_success:
