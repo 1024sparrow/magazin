@@ -13,7 +13,7 @@ install:
 
 script:
   - python -m pytest
-  - mypy --strict-optional hangman
+  - mypy --strict-optional magazin
   - pytest
 
 after_success:
