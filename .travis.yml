@@ -6,9 +6,11 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install mypy
+  - pipi install xenon
 
 script:
   - mypy --strict-optional .
+  - xenon --max-absolute B --max-modules A --max-average A .
   - pytest
 
 after_success:
