@@ -8,7 +8,7 @@ install:
   - pipenv install mypy
 
 script:
-  - mypy --strict-optional magazin
+  - mypy --strict-optional .
   - pytest
 
 after_success:
